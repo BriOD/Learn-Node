@@ -5,3 +5,7 @@ exports.homePage = (req, res) => {
 exports.addTourney = (req, res) => {
     res.render('editTourney', { title: 'Add Tourney' });
 }
+
+exports.createTourney = (req, res) => {
+    req.json(req.body);
+}
