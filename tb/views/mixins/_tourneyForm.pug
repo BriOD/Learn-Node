@@ -2,3 +2,6 @@ mixin tourneyForm(tourney = {})
     form(action="/add" method="POST" enctype="multipart/form-data" class="card")
         label(for="venue") Venue
         input(type="text" name="venue")
+        label(for="buyin") Buy In Amount
+        input(type="text" name="buyin")
+        input(type="submit" value="Save" class="button")
