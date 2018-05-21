@@ -3,6 +3,6 @@ const router = express.Router();
 const tourneyController = require('../controllers/tourneyController');
 
 // Do work here
-router.get('/', tourneyController.myMiddleware, tourneyController.homePage);
+router.get('/', tourneyController.homePage);
 
 module.exports = router;
