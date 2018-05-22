@@ -12,5 +12,6 @@ exports.addTourney = (req, res) => {
 exports.createTourney = async (req, res) => {
     const tourney = new Tourney(req.body);
     await tourney.save();
+    req.flash();
     res.redirect('/')
 };
