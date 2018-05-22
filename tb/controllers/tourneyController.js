@@ -10,8 +10,7 @@ exports.addTourney = (req, res) => {
 }
 
 exports.createTourney = async (req, res) => {
-    const tourney = new Tourney(req.body);
-    await tourney.save();
-    req.flash();
-    res.redirect('/')
+    const tourney = await (new Tourney(req.body)).save();
+    req.flash('success', `Successfully Created ${tourney.venue} $ ${tourney.buyin}.`);
+    res.redirect(`/tourney/${tourney._id}`)
 };
