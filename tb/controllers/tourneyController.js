@@ -1,5 +1,3 @@
-import { Error } from 'mongoose';
-
 const mongoose = require('mongoose');
 const Tourney = mongoose.model('Tourney');
 
@@ -14,5 +12,5 @@ exports.addTourney = (req, res) => {
 exports.createTourney = async (req, res) => {
     const tourney = new Tourney(req.body);
     await tourney.save();
-    console.log('it worked');
+    res.redirect('/')
 };
