@@ -14,3 +14,10 @@ exports.createTourney = async (req, res) => {
     req.flash('success', `Successfully Created ${tourney.venue} $ ${tourney.buyin}.`);
     res.redirect(`/tourney/${tourney._id}`)
 };
+
+exports.getTourneys = async (req, res) => {
+    // querry db to get list of all tourneys
+    const tourneys = await Tourney.find();
+    console.log(tourneys);
+    res.render('tourneys', {title: 'Tourneys', tourneys })
+};

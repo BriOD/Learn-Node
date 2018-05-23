@@ -4,7 +4,8 @@ const tourneyController = require('../controllers/tourneyController');
 
 const { catchErrors } = require('../handlers/errorHandlers');
 
-router.get('/', tourneyController.homePage);
+router.get('/', catchErrors(tourneyController.getTourneys));
+router.get('/tourneys', catchErrors(tourneyController.getTourneys));
 router.get('/add', tourneyController.addTourney);
 router.post('/add', catchErrors(tourneyController.createTourney));
 
