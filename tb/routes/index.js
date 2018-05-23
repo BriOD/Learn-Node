@@ -8,6 +8,7 @@ router.get('/', catchErrors(tourneyController.getTourneys));
 router.get('/tourneys', catchErrors(tourneyController.getTourneys));
 router.get('/add', tourneyController.addTourney);
 router.post('/add', catchErrors(tourneyController.createTourney));
+router.post('/add/:id', catchErrors(tourneyController.updateTourney));
 router.get('/tourneys/:id/edit', catchErrors(tourneyController.editTourney));
 
 module.exports = router;

@@ -29,3 +29,14 @@ exports.editTourney = async (req, res) => {
     // 3. render out the edit form
     res.render('editTourney', { title: `Edit ${tourney.venue} ${tourney.buyin}`, tourney });
 }
+
+exports.updateTourney = async (req, res) => {
+    // find and update the tourney
+    const tourney = await Tourney.findOneAndUpdate({ _id: req.params.id }, req.body, {
+        new: true, // return the new tourney instead of the old one
+        runValidators: true
+    }).exec();
+    req.flash('success', `Successfully updated ${tourney.venue} ${tourney.buyin}`)
+    // redirect to the tourney and tell them it worked
+    res.redirect(`/tourneys`)
+}
