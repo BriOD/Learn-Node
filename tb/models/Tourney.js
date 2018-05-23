@@ -11,6 +11,11 @@ const tourneySchema = new mongoose.Schema({
         type: String,
         trim: true,
         required: 'Please provide the buy in amount.'
+    }, 
+    date: {
+        type: String,
+        trim: true,
+        required: `Please enter this tourney's date`
     }
 });
 
