@@ -1,5 +1,5 @@
 mixin tourneyForm(tourney = {})
-    form(action="/add" method="POST" class="card")
+    form(action=`/add/${tourney.id || ''}` method="POST" class="card")
         label(for="venue") Venue
         input(type="text" name="venue" value=tourney.venue)
         label(for="buyin") Buy In Amount
