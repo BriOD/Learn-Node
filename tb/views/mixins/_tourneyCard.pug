@@ -1,0 +1,6 @@
+mixin tourneyCard(tourney = {})
+    .store
+        .store__hero
+            img(src=`/uploads/${tourney.photo || 'store.png'}`)
+            h2.title
+                a(href=`/tourney/${tourney._id}`) #{tourney.venue} #{tourney.buyin}

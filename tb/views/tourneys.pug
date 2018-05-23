@@ -1,9 +1,10 @@
 extends layout 
 
+include mixins/_tourneyCard
 
 block content   
     .inner
         h2 #{title}
         .stores 
             each tourney in tourneys
-                h2= tourney.venue
+                +tourneyCard(tourney)
