@@ -1,6 +1,12 @@
 mixin tourneyCard(tourney = {})
     .tourney
         .tourney__hero
+            .tourney__actions
+                .tourney__action.tourney__action--edit
+                    a(href=`/tourneys/${tourney._id}/edit`)
+                        != h.icon('pencil')
             img(src=`/uploads/${tourney.photo || 'store.png'}`)
             h2.title
-                a(href=`/tourney/${tourney._id}`) #{tourney.venue} #{tourney.buyin}
+                a(href=`/tourneys/${tourney._id}`) #{tourney.venue} #{tourney.buyin}
+        .tourney__details    
+                p= tourney.buyin    

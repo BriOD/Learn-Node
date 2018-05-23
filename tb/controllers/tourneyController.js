@@ -20,3 +20,11 @@ exports.getTourneys = async (req, res) => {
     const tourneys = await Tourney.find();
     res.render('tourneys', {title: 'Tourneys', tourneys })
 };
+
+exports.editTourney = async (req, res) => {
+    // 1. Find the store given the id
+    const tourney = await Tourney.findOne({ _id: req.params.id })
+    res.json(tourney);
+    // 2. make sure they are the owner of the tourney
+    // 3. render out the edit form
+}
