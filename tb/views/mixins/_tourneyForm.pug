@@ -1,9 +1,9 @@
 mixin tourneyForm(tourney = {})
     form(action="/add" method="POST" class="card")
         label(for="venue") Venue
-        input(type="text" name="venue")
+        input(type="text" name="venue" value=tourney.venue)
         label(for="buyin") Buy In Amount
-        input(type="text" name="buyin")
+        input(type="text" name="buyin" value=tourney.buyin)
         label(for="date") Date of Tourney
-        input(type="text" name="date")
+        input(type="text" name="date" value=tourney.date)
         input(type="submit" value="Save" class="button")
