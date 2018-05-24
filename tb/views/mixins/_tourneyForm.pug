@@ -6,4 +6,15 @@ mixin tourneyForm(tourney = {})
         input(type="text" name="buyin" value=tourney.buyin)
         label(for="date") Date of Tourney
         input(type="text" name="date" value=tourney.date)
+        //- Address,lng and lat
+        label(for="address") Address
+        input(type="text" id="address" name="location[address]" value=(tourney.location 
+        && tourney.location.address))
+        label(for="lng") Address lng
+        input(type="text" id="lng" name="location[coordinates][0]" value=(tourney.location 
+        && tourney.location.coordinates[0])) 
+        label(for="lng") Address lat
+        input(type="text" id="lat" name="location[coordinates][1]" value=(tourney.location 
+        && tourney.location.coordinates[0])) 
+
         input(type="submit" value="Save" class="button")
