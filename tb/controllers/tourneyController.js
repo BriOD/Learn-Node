@@ -75,3 +75,9 @@ exports.updateTourney = async (req, res) => {
     // redirect to the tourney and tell them it worked
     res.redirect(`/tourneys`)
 }
+
+exports.getTourneyById = async (req, res, next) => {
+    const tourney = await Tourney.findOne({ _id: req.params.id });
+    if(!tourney) return next();
+    res.render('tourney', { tourney, title: tourney.venue })
+}

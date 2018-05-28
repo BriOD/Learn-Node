@@ -21,5 +21,6 @@ router.post('/add/:id',
 );
 
 router.get('/tourneys/:id/edit', catchErrors(tourneyController.editTourney));
+router.get('/tourneys/:id', catchErrors(tourneyController.getTourneyById));
 
 module.exports = router;
