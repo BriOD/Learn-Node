@@ -31,6 +31,8 @@ exports.editTourney = async (req, res) => {
 }
 
 exports.updateTourney = async (req, res) => {
+    // set the location data to be a point
+    req.body.location.type = 'Point';
     // find and update the tourney
     const tourney = await Tourney.findOneAndUpdate({ _id: req.params.id }, req.body, {
         new: true, // return the new tourney instead of the old one

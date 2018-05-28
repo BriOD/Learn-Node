@@ -9,6 +9,7 @@
     - Maybe figure out how to implement emojis
     - for the date form, figure out how to do a calendar to select the date from.
     - properly format to display the date
+    - may not want to make it required to provide address, lat and lng
 
 
 ## Webpack configL
