@@ -30,7 +30,8 @@ const tourneySchema = new mongoose.Schema({
             type: String,
             required: 'You must supply an address!'
         }
-    }
+    },
+    photo: String
 });
 
 module.exports = mongoose.model('Tourney', tourneySchema);

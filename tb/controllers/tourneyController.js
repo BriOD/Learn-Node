@@ -1,5 +1,20 @@
 const mongoose = require('mongoose');
 const Tourney = mongoose.model('Tourney');
+const multer = require('multer');  // handles upload requests
+const jimp = require('jimp'); // resizes photots
+const uuid = require('uuid'); // gives us unique filenames
+
+const multerOptions = {
+    storage: multer.memoryStorage(),
+    filefilter(req, file, next) {
+        const isPhoto = file.mimetype.startsWith('image/');
+        if(isPhoto) {
+            next(null, true)
+        } else {
+            next({ message: `That file type isn't allowed!` }, false);
+        }
+    }
+}
 
 exports.homePage = (req, res) => {
     res.render('index');
@@ -8,6 +23,24 @@ exports.homePage = (req, res) => {
 exports.addTourney = (req, res) => {
     res.render('editTourney', { title: 'Add Tourney' });
 }
+
+exports.upload = multer(multerOptions).single('photo');
+
+exports.resize = async (req, res, next) => {
+    // check to see if there's a new file to resize
+    if (!req.file) {
+        next();
+        return;
+    };
+    const extension = req.file.mimetype.split('/')[1];
+    req.body.photo = `${uuid.v4()}.${extension}`;
+    // now resize
+    const photo = await jimp.read(req.file.buffer);
+    await photo.resize(800, jimp.AUTO);
+    await photo.write(`./public/uploads/${req.body.photo}`);
+    // once we have written the photo to our filesystem, keep going
+    next();
+};
 
 exports.createTourney = async (req, res) => {
     const tourney = await (new Tourney(req.body)).save();
