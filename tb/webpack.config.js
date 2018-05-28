@@ -50,7 +50,7 @@ const uglify = new webpack.optimize.UglifyJsPlugin({ // eslint-disable-line
 const config = {
   entry: {
     // we only have 1 entry, but I've set it up for multiple in the future
-    App: './public/javascripts/delicious-app.js'
+    App: './public/javascripts/team-bax.js'
   },
   // we're using sourcemaps and here is where we specify which kind of sourcemap to use
   devtool: 'source-map',
@@ -64,7 +64,9 @@ const config = {
     filename: '[name].bundle.js'
   },
 
-  // remember we said webpack sees everthing as modules and how different loaders are responsible for different file types? Here is is where we implement them. Pass it the rules for our JS and our styles
+  // remember we said webpack sees everthing as modules and how different loaders are 
+  // responsible for different file types? Here is is where we implement them. 
+  // Pass it the rules for our JS and our styles
   module: {
     rules: [javascript, styles]
   },

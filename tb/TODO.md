@@ -10,6 +10,7 @@
     - properly format to display the date
 
 
+## Webpack configL
+    - line 53 might need to be changed to what i want to call it. i don't want it to be delicious-app. (OK i changed this)
 
-
-## Just finished video 14    
+## Just finished video 15    
