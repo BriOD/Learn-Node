@@ -1,5 +1,6 @@
 ## thisgs to do offline:
     - Clean up views. Correct the navbar.
+    - Add explainer for address auto complete for Rio location
 
 
 ## things to figure out:
