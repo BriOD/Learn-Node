@@ -10,11 +10,13 @@ mixin tourneyForm(tourney = {})
         label(for="address") Address
         input(type="text" id="address" name="location[address]" value=(tourney.location 
         && tourney.location.address))
+
         label(for="lng") Address lng
         input(type="text" id="lng" name="location[coordinates][0]" value=(tourney.location 
-        && tourney.location.coordinates[0])) 
+        && tourney.location.coordinates[0]) required) 
+
         label(for="lat") Address lat
         input(type="text" id="lat" name="location[coordinates][1]" value=(tourney.location 
-        && tourney.location.coordinates[1])) 
+        && tourney.location.coordinates[1]) required) 
 
         input(type="submit" value="Save" class="button")

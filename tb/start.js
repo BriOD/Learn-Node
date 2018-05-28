@@ -11,8 +11,6 @@ mongoose.connection.on('error', (err) => {
   console.error(`🙅 🚫 🙅 🚫 🙅 🚫 🙅 🚫 → ${err.message}`);
 });
 
-// Readt, let's go!!!
-
 // import all models
 require('./models/Tourney');
 
