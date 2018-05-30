@@ -15,4 +15,4 @@
 ## Webpack configL
     - line 53 might need to be changed to what i want to call it. i don't want it to be delicious-app. (OK i changed this)
 
-## Just finished video 15    
+## on video 19, 6:30 into it    

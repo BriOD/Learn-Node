@@ -1,4 +1,11 @@
 extends layout
 
 block content
-    h2 #{tourney.venue} #{tourney.buyin}
+    .single
+        .single__hero
+            img.single__image(src=`/uploads/${tourney.photo || 'store.png'}`)
+            h2.title.title--single #{tourney.venue} #{tourney.buyin}
+
+    .single__details.inner
+        imp.single__map
+                
