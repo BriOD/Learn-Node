@@ -7,5 +7,6 @@ block content
             h2.title.title--single #{tourney.venue} #{tourney.buyin}
 
     .single__details.inner
-        imp.single__map
+        img.single__map(src=h.staticMap(tourney.location.coordinates))
+        p.single__location= tourney.location.address
                 
