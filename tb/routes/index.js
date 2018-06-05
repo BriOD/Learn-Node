@@ -26,5 +26,9 @@ router.get('/tourneys/:id', catchErrors(tourneyController.getTourneyById));
 
 router.get('/login', userController.loginForm)
 router.get('/register', userController.registerForm)
+// 1. validate registration data
+// 2. register the user
+// 3. log them in
+router.post('/register', userController.)
 
 module.exports = router;
