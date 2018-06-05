@@ -25,5 +25,6 @@ router.get('/tourneys/:id/edit', catchErrors(tourneyController.editTourney));
 router.get('/tourneys/:id', catchErrors(tourneyController.getTourneyById));
 
 router.get('/login', userController.loginForm)
+router.get('/register', userController.registerForm)
 
 module.exports = router;
