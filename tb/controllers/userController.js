@@ -8,11 +8,11 @@ exports.registerForm = (req, res) => {
     res.render('register', { title: 'Register' })
 };
 
-exports.validateUser = (req, res, next) => {
+exports.validateRegister = (req, res, next) => {
     req.sanitizeBody('name');
     req.checkBody('name', 'You must supply a name.').notEmpty();
     req.checkBody('email', 'That email is not valid.').isEmail();
-    req.SanitizeBody('email').normalizeEmail({
+    req.sanitizeBody('email').normalizeEmail({
         remove_dots: false,
         remove_extension: false,
         gmail_remove_subaddress: false
@@ -21,4 +21,9 @@ exports.validateUser = (req, res, next) => {
     req.checkBody('password-confirm', 'Confirm Password cannot be blank.').notEmpty();
     req.checkBody('password-confirm', 'Your passwords do not match.').equals(req.body.password);
 
+    const errors = req.validationErrors();
+    if(errors) {
+        req.flash('error', errors.map(err => err.msg));
+        res.render('register', { title: 'Register', body: req.body, flashes: req.flash() });
+    }
 };
