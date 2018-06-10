@@ -25,8 +25,9 @@ router.post('/add/:id',
 router.get('/tourneys/:id/edit', catchErrors(tourneyController.editTourney));
 router.get('/tourneys/:id', catchErrors(tourneyController.getTourneyById));
 
-router.get('/login', userController.loginForm)
-router.get('/register', userController.registerForm)
+router.get('/login', userController.loginForm);
+router.post('/login', authController.login);
+router.get('/register', userController.registerForm);
 // 1. validate registration data
 // 2. register the user
 // 3. log them in
