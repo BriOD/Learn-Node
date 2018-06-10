@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoos.Schema;
+const Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 const md5 = require('md5');
 const validator = require('validator');

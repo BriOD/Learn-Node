@@ -1,0 +1,15 @@
+const passport = require('passport');
+
+exports.login = passport.authenticate('local', {
+    failureRedirect: '/login',
+    failureFlash: 'Failed Login.',
+    successRedirect: '/',
+    successFlash: 'Now logged In.'
+});
+
+exports.logout = (req, res) => {
+    req.logout();
+    req.flash('success', 'You have successfully logged out!');
+    res.redirect('/');
+}
+
