@@ -8,7 +8,7 @@ const { catchErrors } = require('../handlers/errorHandlers');
 
 router.get('/', catchErrors(tourneyController.getTourneys));
 router.get('/tourneys', catchErrors(tourneyController.getTourneys));
-router.get('/add', tourneyController.addTourney);
+router.get('/add',  authController.isLoggedIn, tourneyController.addTourney);
 
 router.post('/add', 
     tourneyController.upload,
