@@ -18,4 +18,5 @@
 ## Webpack config
     - line 53 might need to be changed to what i want to call it. i don't want it to be delicious-app. (OK i changed this)
 
-## on video 19, 6:30 into it    
+## creating an icon: 
+    - https://creativenerds.co.uk/tutorials/illustrator-tutorials-for-creating-icons/
