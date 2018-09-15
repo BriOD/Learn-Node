@@ -21,7 +21,7 @@ exports.icon = (name) => fs.readFileSync(`./public/images/icons/${name}.svg`);
 exports.siteName = `Team Bax`;
 
 exports.menu = [
-  { slug: '/tourneys', title: 'Tourneys', icon: 'store', },
+  { slug: '/tourneys', title: 'Tourneys', icon: 'top', },
   { slug: '/add', title: 'Add', icon: 'add', },
   { slug: '/map', title: 'Map', icon: 'map', },
 ];
